@@ -1,0 +1,15 @@
+# Log – 2025-05-14
+
+### 🔧 Task(s) Completed:
+- Finalized abstract and project hypothesis
+- Outlined full environmental control system
+- Created wiring plan and system diagram
+- Defined component list and ordered Raspberry Pi + sensors
+
+### 🧠 Thoughts:
+Today I focused on clarifying my goals. The hardest part is going to be stabilizing humidity without causing mold or fog. I might use a small humidifier with an ultrasonic sensor and relay to cut it off at the ideal %RH.
+
+### 🔍 Next Steps:
+- Begin 3D printing base frame
+- Test Pi + sensor readings
+- Log environmental data to CSV file
