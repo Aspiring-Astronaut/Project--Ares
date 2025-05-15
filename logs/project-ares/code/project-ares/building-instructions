@@ -1,0 +1,74 @@
+# 🌱 Project ARES: Martian Plant Habitat Simulation
+
+Welcome to Project ARES! This experiment simulates a harsh Martian environment on the outside, while maintaining Earth-like conditions inside a sealed terrarium to grow plants—starting with radishes.
+
+---
+
+## 🧩 Parts List
+
+### 🖥 Electronics
+- Raspberry Pi (any model with GPIO & I²C)
+- MicroSD card with Raspberry Pi OS
+- SHT31-D Temperature & Humidity Sensor (I²C)
+- Relay Module (1-channel)
+- Heat lamp or 5V ceramic heater
+- Jumper wires
+- Breadboard (optional)
+
+### 🌿 Enclosure
+- 3D printed Mars shell (outer layer)
+- 3D printed inner terrarium
+- Clear plastic dome or jar (fits in shell)
+- PLA filament (for printing)
+
+### 💡 Other
+- LED grow light (USB or 5V)
+- Small radish seeds
+- Potting soil
+- Small humidifier or mister (optional, v2)
+- Power supply for Pi and heat lamp
+
+---
+
+## 🛠️ Assembly Instructions
+
+### 1. 🧠 Setup Raspberry Pi
+
+- Flash Raspberry Pi OS to a microSD card
+- Boot up and connect to Wi-Fi
+- Enable I²C and GPIO via `raspi-config`
+
+### 2. 🔌 Wire the Components
+
+**SHT31-D Sensor (I²C):**
+- VCC → 3.3V
+- GND → GND
+- SDA → GPIO 2
+- SCL → GPIO 3
+
+**Relay + Heat Lamp:**
+- Relay IN → GPIO 17
+- Relay VCC → 5V
+- Relay GND → GND
+- Plug heat lamp into relay output
+
+### 3. 📦 Build the Habitat
+
+- 3D print the shell and inner dome (see `enclosure/`)
+- Place soil and radish seeds inside the inner terrarium
+- Mount sensor inside dome
+- Mount grow light above dome
+- Make sure wires exit through a small opening in the shell
+
+### 4. 💻 Install Software
+
+Run this in the terminal:
+
+```bash
+sudo apt update
+sudo apt install python3-pip
+pip3 install adafruit-circuitpython-sht31d RPi.GPIO
+git clone https://github.com/your-username/project-ares.git
+cd project-ares/code
+python3 temp_control.py
+
